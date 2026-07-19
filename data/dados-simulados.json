@@ -1,0 +1,279 @@
+{
+  "descricao": "Base de demonstração pública da gestão operacional KHUUMBA",
+  "aviso": "Dados simulados para validação do sistema; não representam registos contabilísticos oficiais.",
+  "obras": [
+    {
+      "codigo": "OBR-001",
+      "obra": "Portagem de Mudissa",
+      "local": "Mudissa, Maputo Província",
+      "estado": "Em execução",
+      "progresso": 10,
+      "trabalhadores": 18,
+      "equipamentos": [
+        "Camião Basculante 01",
+        "Pá Escavadora 01"
+      ]
+    },
+    {
+      "codigo": "OBR-002",
+      "obra": "Vala do Chiango",
+      "local": "Chiango, Maputo Cidade",
+      "estado": "Concluída",
+      "progresso": 100,
+      "trabalhadores": 0,
+      "equipamentos": []
+    },
+    {
+      "codigo": "OBR-003",
+      "obra": "Portagem de Kumbeza",
+      "local": "Kumbeza, Maputo Província",
+      "estado": "Concluída",
+      "progresso": 100,
+      "trabalhadores": 0,
+      "equipamentos": []
+    },
+    {
+      "codigo": "OBR-004",
+      "obra": "Portagem de Matola Gare",
+      "local": "Matola Gare, Maputo Província",
+      "estado": "Em execução",
+      "progresso": 90,
+      "trabalhadores": 26,
+      "equipamentos": [
+        "Camião Basculante 02",
+        "Betoneira 01"
+      ]
+    },
+    {
+      "codigo": "OBR-005",
+      "obra": "FIPAS Gaza",
+      "local": "Gaza",
+      "estado": "Mobilização",
+      "progresso": 5,
+      "trabalhadores": 12,
+      "equipamentos": [
+        "Viatura Operacional 01"
+      ]
+    },
+    {
+      "codigo": "OBR-006",
+      "obra": "FIPAS Inhambane",
+      "local": "Inhambane",
+      "estado": "Mobilização",
+      "progresso": 5,
+      "trabalhadores": 10,
+      "equipamentos": [
+        "Camião de Apoio 01"
+      ]
+    },
+    {
+      "codigo": "OBR-007",
+      "obra": "FIPAS Maputo Província",
+      "local": "Maputo Província",
+      "estado": "Mobilização",
+      "progresso": 5,
+      "trabalhadores": 14,
+      "equipamentos": [
+        "Viatura Operacional 02"
+      ]
+    }
+  ],
+  "equipamentos": [
+    {
+      "codigo": "EQ-001",
+      "nome": "Camião Basculante 01",
+      "tipo": "Camião",
+      "afectacao": "Mudissa",
+      "estado": "Operacional"
+    },
+    {
+      "codigo": "EQ-002",
+      "nome": "Camião Basculante 02",
+      "tipo": "Camião",
+      "afectacao": "Matola Gare",
+      "estado": "Operacional"
+    },
+    {
+      "codigo": "EQ-003",
+      "nome": "Camião de Apoio 01",
+      "tipo": "Camião",
+      "afectacao": "FIPAS Inhambane",
+      "estado": "Em missão"
+    },
+    {
+      "codigo": "EQ-004",
+      "nome": "Pá Escavadora 01",
+      "tipo": "Máquina pesada",
+      "afectacao": "Mudissa",
+      "estado": "Operacional"
+    },
+    {
+      "codigo": "EQ-005",
+      "nome": "Pá Escavadora 02",
+      "tipo": "Máquina pesada",
+      "afectacao": "Estaleiro Central",
+      "estado": "Disponível"
+    },
+    {
+      "codigo": "EQ-006",
+      "nome": "Betoneira 01",
+      "tipo": "Equipamento",
+      "afectacao": "Matola Gare",
+      "estado": "Operacional"
+    },
+    {
+      "codigo": "EQ-007",
+      "nome": "Viatura Operacional 01",
+      "tipo": "Pickup",
+      "afectacao": "FIPAS Gaza",
+      "estado": "Em missão"
+    },
+    {
+      "codigo": "EQ-008",
+      "nome": "Viatura Operacional 02",
+      "tipo": "Pickup",
+      "afectacao": "FIPAS Maputo",
+      "estado": "Em missão"
+    },
+    {
+      "codigo": "EQ-009",
+      "nome": "Gerador 01",
+      "tipo": "Energia",
+      "afectacao": "Estaleiro Central",
+      "estado": "Disponível"
+    }
+  ],
+  "materiais": [
+    {
+      "codigo": "MAT-001",
+      "material": "Cimento 42.5",
+      "unidade": "Saco",
+      "quantidade": 680,
+      "local": "Armazém Central"
+    },
+    {
+      "codigo": "MAT-002",
+      "material": "Ferro 12 mm",
+      "unidade": "Barra",
+      "quantidade": 420,
+      "local": "Mudissa"
+    },
+    {
+      "codigo": "MAT-003",
+      "material": "Brita",
+      "unidade": "m³",
+      "quantidade": 185,
+      "local": "Matola Gare"
+    },
+    {
+      "codigo": "MAT-004",
+      "material": "Areia lavada",
+      "unidade": "m³",
+      "quantidade": 240,
+      "local": "Matola Gare"
+    },
+    {
+      "codigo": "MAT-005",
+      "material": "Tubagem PVC",
+      "unidade": "Unidade",
+      "quantidade": 310,
+      "local": "FIPAS Gaza"
+    },
+    {
+      "codigo": "MAT-006",
+      "material": "Blocos",
+      "unidade": "Unidade",
+      "quantidade": 4800,
+      "local": "Mudissa"
+    },
+    {
+      "codigo": "MAT-007",
+      "material": "Combustível",
+      "unidade": "Litro",
+      "quantidade": 3450,
+      "local": "Armazém Central"
+    }
+  ],
+  "trabalhadores": [
+    {
+      "codigo": "TR-001",
+      "nome": "Paulo Matavele",
+      "funcao": "Encarregado",
+      "afectacao": "Mudissa",
+      "situacao": "Em campo"
+    },
+    {
+      "codigo": "TR-002",
+      "nome": "Ernesto Mucavele",
+      "funcao": "Operador de máquina",
+      "afectacao": "Mudissa",
+      "situacao": "Em campo"
+    },
+    {
+      "codigo": "TR-003",
+      "nome": "Ana Mondlane",
+      "funcao": "Engenheira Civil",
+      "afectacao": "Matola Gare",
+      "situacao": "Em campo"
+    },
+    {
+      "codigo": "TR-004",
+      "nome": "Carlos Muianga",
+      "funcao": "Técnico de Segurança",
+      "afectacao": "Matola Gare",
+      "situacao": "Em campo"
+    },
+    {
+      "codigo": "TR-005",
+      "nome": "Marta Nhantumbo",
+      "funcao": "Coordenadora",
+      "afectacao": "FIPAS Inhambane",
+      "situacao": "Em missão"
+    },
+    {
+      "codigo": "TR-006",
+      "nome": "Alberto Bila",
+      "funcao": "Coordenador",
+      "afectacao": "FIPAS Gaza/Maputo",
+      "situacao": "Em missão"
+    }
+  ],
+  "movimentacoes": [
+    {
+      "data": "2026-07-19",
+      "recurso": "18 trabalhadores",
+      "percurso": "Sede → Mudissa",
+      "motivo": "Mobilização de equipa"
+    },
+    {
+      "data": "2026-07-19",
+      "recurso": "12 trabalhadores",
+      "percurso": "Maputo → FIPAS Gaza",
+      "motivo": "Mobilização inicial"
+    },
+    {
+      "data": "2026-07-18",
+      "recurso": "10 trabalhadores",
+      "percurso": "Maputo → FIPAS Inhambane",
+      "motivo": "Mobilização inicial"
+    },
+    {
+      "data": "2026-07-18",
+      "recurso": "14 trabalhadores",
+      "percurso": "Sede → FIPAS Maputo",
+      "motivo": "Mobilização inicial"
+    },
+    {
+      "data": "2026-07-17",
+      "recurso": "8 trabalhadores",
+      "percurso": "Matola Gare → Sede",
+      "motivo": "Rotação de equipa"
+    },
+    {
+      "data": "2026-07-16",
+      "recurso": "Pá Escavadora 01",
+      "percurso": "Estaleiro → Mudissa",
+      "motivo": "Afectação de equipamento"
+    }
+  ]
+}
