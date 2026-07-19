@@ -30,3 +30,18 @@ O portal publicado implementa uma demonstração de gestão de obras com persist
 Este repositório é público. Por isso, credenciais e valores financeiros por obra não devem ser tratados como fonte privada ou base oficial. A versão de produção deverá usar autenticação no servidor, base de dados privada, controlo de permissões no backend, auditoria e variáveis de ambiente.
 
 O código publicado no repositório deve usar dados genéricos ou placeholders. Os valores apresentados no portal são estritamente fictícios e servem apenas para validação da interface.
+
+
+## Cadastros por área
+
+Cada módulo apresenta uma acção contextual e guarda o novo registo na base demonstrativa do navegador:
+
+- Obras: Nova obra.
+- Equipamentos: Novo equipamento.
+- Materiais: Novo material.
+- Trabalhadores: Novo trabalhador.
+- Movimentações: Nova movimentação.
+- Utilizadores: Novo utilizador, disponível ao CEO e Administrador.
+- Financeiro: Nova despesa por obra, disponível ao CEO e Administrador.
+
+Os registos permanecem após actualizar a página. A opção **Repor dados** restaura a base simulada inicial.
