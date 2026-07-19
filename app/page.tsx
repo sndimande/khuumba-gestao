@@ -1,9 +1,21 @@
+import Image from "next/image";
+
 const services = [
   { n: "01", title: "Construção civil", text: "Edifícios residenciais, comerciais e institucionais, da fundação ao acabamento." },
   { n: "02", title: "Obras públicas", text: "Infraestruturas de interesse público executadas com rigor, segurança e responsabilidade." },
   { n: "03", title: "Saneamento", text: "Soluções de abastecimento de água, drenagem, saneamento e promoção da saúde ambiental." },
   { n: "04", title: "Manutenção", text: "Reabilitação e conservação preventiva e correctiva de edifícios e infraestruturas." },
   { n: "05", title: "Desenvolvimento comunitário", text: "Intervenções que combinam infraestrutura, participação local e impacto social sustentável." },
+];
+
+const gallery = [
+  {src:"/images/gallery/mudissa-portagem.png",title:"Portagem de Mudissa",meta:"Obra em execução · 10%",wide:true},
+  {src:"/images/gallery/chiango-vala.png",title:"Vala do Chiango",meta:"Obra concluída"},
+  {src:"/images/gallery/matola-gare.png",title:"Portagem de Matola Gare",meta:"Execução avançada · 90%"},
+  {src:"/images/gallery/kumbeza-portagem.png",title:"Portagem de Kumbeza",meta:"Obra concluída",wide:true},
+  {src:"/images/gallery/fipas-gaza.png",title:"FIPAS — Gaza",meta:"Fase de mobilização"},
+  {src:"/images/gallery/fipas-inhambane.png",title:"FIPAS — Inhambane",meta:"Fase de mobilização"},
+  {src:"/images/gallery/fipas-maputo.png",title:"FIPAS — Maputo Província",meta:"Fase de mobilização",wide:true},
 ];
 
 function Logo({ light = false }: { light?: boolean }) {
@@ -24,6 +36,12 @@ export default function Home() {
           <a href="#sobre">Empresa</a><a href="#servicos">Serviços</a><a href="#projectos">Projectos</a><a href="#contactos">Contactos</a><a href="/gestao">Gestão</a>
         </nav>
         <a className="nav-cta" href="#orcamento">Pedir orçamento <span>↗</span></a>
+        <details className="mobile-menu">
+          <summary aria-label="Abrir menu"><i /><i /><i /><span>Menu</span></summary>
+          <nav aria-label="Navegação móvel">
+            <a href="#sobre">Empresa</a><a href="#servicos">Serviços</a><a href="#projectos">Projectos</a><a href="#contactos">Contactos</a><a href="/gestao">Gestão</a><a className="mobile-quote" href="#orcamento">Pedir orçamento ↗</a>
+          </nav>
+        </details>
       </header>
 
       <section className="hero">
@@ -63,8 +81,9 @@ export default function Home() {
       </section>
 
       <section className="projects section" id="projectos">
-        <div className="section-heading pale"><div><p className="section-kicker">Portfólio</p><h2>Obras que falam<br />pelo nosso trabalho.</h2></div><p>Esta área será actualizada com fotografias, localização, cliente, período e principais resultados de cada projecto executado.</p></div>
-        <div className="project-grid"><article className="project-feature"><div className="project-placeholder"><span>K</span></div><div><small>PROJECTO EM DESTAQUE</small><h3>Portfólio institucional em preparação</h3><p>Envie fotografias e dados das obras realizadas para completar esta secção.</p></div></article><aside><p>Próximos conteúdos</p><ul><li>Construção e reabilitação</li><li>Água e saneamento</li><li>Infraestruturas públicas</li><li>Intervenções comunitárias</li></ul></aside></div>
+        <div className="section-heading pale"><div><p className="section-kicker">Galeria de obras</p><h2>Obras que transformam<br />infraestruturas e comunidades.</h2></div><p>Registo visual ilustrativo das intervenções em portagens, drenagem e projectos de saneamento em Moçambique.</p></div>
+        <div className="gallery-grid">{gallery.map((item)=><figure className={item.wide?"wide":""} key={item.title}><div><Image src={item.src} alt={`Imagem ilustrativa — ${item.title}`} width={1000} height={625}/><span>Imagem ilustrativa</span></div><figcaption><strong>{item.title}</strong><small>{item.meta}</small></figcaption></figure>)}</div>
+        <p className="gallery-note">Todas as imagens desta galeria são representações ilustrativas criadas para apresentação institucional. Podem ser substituídas posteriormente por fotografias oficiais das obras.</p>
       </section>
 
       <section className="quote section" id="orcamento">
