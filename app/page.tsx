@@ -1,28 +1,38 @@
 import Image from "next/image";
 
 const services = [
-  { n: "01", title: "Construção civil", text: "Edifícios residenciais, comerciais e institucionais, da fundação ao acabamento." },
-  { n: "02", title: "Obras públicas", text: "Infraestruturas de interesse público executadas com rigor, segurança e responsabilidade." },
-  { n: "03", title: "Saneamento", text: "Soluções de abastecimento de água, drenagem, saneamento e promoção da saúde ambiental." },
-  { n: "04", title: "Manutenção", text: "Reabilitação e conservação preventiva e correctiva de edifícios e infraestruturas." },
-  { n: "05", title: "Desenvolvimento comunitário", text: "Intervenções que combinam infraestrutura, participação local e impacto social sustentável." },
+  { n: "01", title: "Habitação e edifícios", text: "Projectos, construção e reabilitação de edifícios residenciais, comerciais e institucionais." },
+  { n: "02", title: "Estradas e obras públicas", text: "Estradas, pontes, portagens, acessos e infraestruturas de utilidade pública." },
+  { n: "03", title: "Água e saneamento", text: "Sistemas de abastecimento, redes de distribuição, ligações domiciliares, drenagem e saneamento." },
+  { n: "04", title: "Hidráulica e escavações", text: "Valas, fundações, tubagens, cabos, fibra óptica e infraestruturas hidráulicas." },
+  { n: "05", title: "Manutenção e resiliência", text: "Conservação e soluções resilientes a cheias, ciclones e mudanças climáticas." },
 ];
 
 const gallery = [
-  {src:"/images/gallery/mudissa-portagem.png",title:"Portagem de Mudissa",meta:"Obra em execução · 10%",wide:true},
-  {src:"/images/gallery/chiango-vala.png",title:"Vala do Chiango",meta:"Obra concluída"},
-  {src:"/images/gallery/matola-gare.png",title:"Portagem de Matola Gare",meta:"Execução avançada · 90%"},
-  {src:"/images/gallery/kumbeza-portagem.png",title:"Portagem de Kumbeza",meta:"Obra concluída",wide:true},
-  {src:"/images/gallery/fipas-gaza.png",title:"FIPAS — Gaza",meta:"Fase de mobilização"},
-  {src:"/images/gallery/fipas-inhambane.png",title:"FIPAS — Inhambane",meta:"Fase de mobilização"},
-  {src:"/images/gallery/fipas-maputo.png",title:"FIPAS — Maputo Província",meta:"Fase de mobilização",wide:true},
+  {src:"/images/portfolio/abastecimento-agua.jpg",title:"Abastecimento de água",meta:"Reservatório elevado e infraestrutura hidráulica",wide:true},
+  {src:"/images/portfolio/trabalhos-campo.jpg",title:"Trabalhos de campo",meta:"Execução de infraestruturas em comunidades"},
+  {src:"/images/portfolio/estrutura-metalica.jpg",title:"Estruturas metálicas",meta:"Coberturas e estruturas de grande vão"},
+  {src:"/images/portfolio/fundacoes.jpg",title:"Fundações e armaduras",meta:"Preparação e execução estrutural",wide:true},
+  {src:"/images/portfolio/escavacao.jpg",title:"Escavações",meta:"Valas e implantação de redes"},
+  {src:"/images/portfolio/ponte-metalica.jpg",title:"Obras públicas",meta:"Estrutura metálica e plataforma"},
+  {src:"/images/portfolio/drenagem.jpg",title:"Drenagem e saneamento",meta:"Infraestruturas para protecção das comunidades",wide:true},
+  {src:"/images/portfolio/portagem.jpg",title:"Infraestrutura de portagem",meta:"Trabalhos de construção e acabamento"},
+];
+
+const meaning = [
+  ["K", "Know-how técnico", "Experiência, competência e rigor."],
+  ["H", "Habitação e hidráulica", "Edifícios e infraestruturas hidráulicas."],
+  ["U", "Urbanização", "Bairros, acessos e infraestruturas urbanas."],
+  ["U", "Utilidade pública", "Estradas, pontes, portagens e drenagem."],
+  ["M", "Manutenção", "Conservação e reabilitação de infraestruturas."],
+  ["B", "Bem-estar", "Obras que melhoram a qualidade de vida."],
+  ["A", "Água, ambiente e saneamento", "Soluções responsáveis e sustentáveis."],
 ];
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <a className={`logo ${light ? "logo-light" : ""}`} href="#inicio" aria-label="KHUUMBA — página inicial">
-      <span className="logo-mark" aria-hidden="true"><i /><b /></span>
-      <span className="logo-type"><strong>KHUUMBA</strong><small>CONSTRUÇÕES · OBRAS PÚBLICAS · SANEAMENTO</small></span>
+      <Image className="brand-logo" src="/images/brand/khuumba-logo-2026-transparent-web.png" alt="KHUUMBA Construções, Obras, Hidráulica e Saneamento" width={900} height={385} priority />
     </a>
   );
 }
@@ -48,7 +58,7 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-copy">
           <p className="eyebrow"><span /> Engenharia com impacto em Moçambique</p>
-          <h1>Construímos soluções.<br /><em>Transformamos</em> comunidades.</h1>
+          <h1>Construindo infraestruturas.<br /><em>Desenvolvendo</em> comunidades.</h1>
           <p className="hero-lead">Construção civil, obras públicas e saneamento com qualidade, segurança e compromisso em cada projecto.</p>
           <div className="hero-actions"><a className="button button-primary" href="#orcamento">Fale connosco <span>↗</span></a><a className="text-link" href="#servicos">Conheça os serviços <span>↓</span></a></div>
         </div>
@@ -74,6 +84,11 @@ export default function Home() {
         <div className="service-list">{services.map((s) => <article key={s.n}><span>{s.n}</span><h3>{s.title}</h3><p>{s.text}</p><b>↗</b></article>)}</div>
       </section>
 
+      <section className="meaning section" id="significado">
+        <div className="section-heading pale"><div><p className="section-kicker">O significado da nossa marca</p><h2>KHUUMBA representa<br />o que construímos.</h2></div><p>Conhecimento técnico aplicado à habitação, urbanização, obras públicas, manutenção, bem-estar, água e saneamento.</p></div>
+        <div className="meaning-grid">{meaning.map((item,index)=><article key={`${item[0]}-${index}`}><b>{item[0]}</b><div><h3>{item[1]}</h3><p>{item[2]}</p></div></article>)}</div>
+      </section>
+
       <section className="principles section">
         <div className="principle-card orange"><span>01</span><h3>Qualidade</h3><p>Rigor técnico e atenção ao detalhe em todas as fases.</p></div>
         <div className="principle-card teal"><span>02</span><h3>Segurança</h3><p>Protecção das pessoas, dos activos e do ambiente.</p></div>
@@ -81,9 +96,8 @@ export default function Home() {
       </section>
 
       <section className="projects section" id="projectos">
-        <div className="section-heading pale"><div><p className="section-kicker">Galeria de obras</p><h2>Obras que transformam<br />infraestruturas e comunidades.</h2></div><p>Registo visual ilustrativo das intervenções em portagens, drenagem e projectos de saneamento em Moçambique.</p></div>
-        <div className="gallery-grid">{gallery.map((item)=><figure className={item.wide?"wide":""} key={item.title}><div><Image src={item.src} alt={`Imagem ilustrativa — ${item.title}`} width={1000} height={625}/><span>Imagem ilustrativa</span></div><figcaption><strong>{item.title}</strong><small>{item.meta}</small></figcaption></figure>)}</div>
-        <p className="gallery-note">Todas as imagens desta galeria são representações ilustrativas criadas para apresentação institucional. Podem ser substituídas posteriormente por fotografias oficiais das obras.</p>
+        <div className="section-heading pale"><div><p className="section-kicker">Portfólio de obras</p><h2>Experiência real.<br />Resultados visíveis.</h2></div><p>Registos do portfólio institucional da KHUUMBA em construção, água, saneamento, estruturas e obras públicas.</p></div>
+        <div className="gallery-grid">{gallery.map((item)=><figure className={item.wide?"wide":""} key={item.title}><div><Image src={item.src} alt={item.title} width={1000} height={625}/><span>Portfólio KHUUMBA</span></div><figcaption><strong>{item.title}</strong><small>{item.meta}</small></figcaption></figure>)}</div>
       </section>
 
       <section className="quote section" id="orcamento">
@@ -92,7 +106,7 @@ export default function Home() {
       </section>
 
       <footer id="contactos">
-        <div className="footer-top"><Logo light /><div><small>CONTACTO</small><a href="tel:+258866900003">+258 86 690 0003</a><a href="mailto:khuumbaconstrucoes@gmail.com">khuumbaconstrucoes@gmail.com</a></div><div><small>LOCALIZAÇÃO</small><p>Bairro Intaka<br />Maputo, Moçambique</p></div></div>
+        <div className="footer-top"><Logo light /><div><small>CONTACTO</small><a href="tel:+258866900003">+258 86 690 0003</a><a href="tel:+258878080306">+258 87 808 0306</a><a href="mailto:khuumbaconstrucoes@gmail.com">khuumbaconstrucoes@gmail.com</a></div><div><small>LOCALIZAÇÃO</small><p>Bairro de Laulane, Av. Julius Nyerere, n.º 185<br />Distrito de KaMavota, Maputo</p></div></div>
         <div className="footer-bottom"><span>© 2026 KHUUMBA. Todos os direitos reservados.</span><span>NUIT 401483667</span><a href="#inicio">Voltar ao topo ↑</a></div>
       </footer>
     </main>
