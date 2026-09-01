@@ -15,8 +15,8 @@ const gallery = [
   {src:"/images/portfolio/fundacoes.jpg",title:"Fundações e armaduras",meta:"Preparação e execução estrutural",wide:true},
   {src:"/images/portfolio/escavacao.jpg",title:"Escavações",meta:"Valas e implantação de redes"},
   {src:"/images/portfolio/ponte-metalica.jpg",title:"Obras públicas",meta:"Estrutura metálica e plataforma"},
-  {src:"/images/portfolio/portagem.jpg",title:"Infraestrutura de portagem",meta:"Trabalhos de construção e acabamento",wide:true},
-  {src:"/images/portfolio/drenagem.jpg",title:"Drenagem e saneamento",meta:"Infraestruturas para protecção das comunidades"},
+  {src:"/images/portfolio/drenagem.jpg",title:"Infraestrutura de portagem",meta:"Trabalhos de construção e acabamento",wide:true},
+  {src:"/images/portfolio/portagem.jpg",title:"Drenagem e saneamento",meta:"Infraestruturas para protecção das comunidades"},
 ];
 
 const meaning = [
