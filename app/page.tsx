@@ -1,4 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+type PortfolioItem = { src: string; title: string; meta: string; wide?: boolean };
+type Partner = { name: string; logo?: string; category: string };
 
 const services = [
   {
@@ -74,6 +80,13 @@ const gallery = [
   },
 ];
 
+const partners: Partner[] = [
+  { name: "REVIMO, S.A.", category: "Rede Viária de Moçambique" },
+  { name: "FIPAAS, FP", category: "Água e saneamento" },
+  { name: "ANE", category: "Administração Nacional de Estradas" },
+  { name: "Municípios", category: "Infraestruturas municipais" },
+];
+
 const meaning = [
   ["K", "Know-how técnico", "Experiência, competência e rigor."],
   ["H", "Habitação e hidráulica", "Edifícios e infraestruturas hidráulicas."],
@@ -104,6 +117,21 @@ function Logo({ light = false }: { light?: boolean }) {
 }
 
 export default function Home() {
+  const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>(gallery);
+  const [partnerItems, setPartnerItems] = useState<Partner[]>(partners);
+
+  useEffect(() => {
+    try {
+      const savedPortfolio = JSON.parse(localStorage.getItem("khuumba-portfolio-v1") || "null");
+      const savedPartners = JSON.parse(localStorage.getItem("khuumba-partners-v1") || "null");
+      if (Array.isArray(savedPortfolio) && savedPortfolio.length) setPortfolioItems(savedPortfolio);
+      if (Array.isArray(savedPartners) && savedPartners.length) setPartnerItems(savedPartners);
+    } catch {
+      setPortfolioItems(gallery);
+      setPartnerItems(partners);
+    }
+  }, []);
+
   return (
     <main id="inicio">
       <header className="site-header">
@@ -331,8 +359,8 @@ export default function Home() {
           </p>
         </div>
         <div className="gallery-grid">
-          {gallery.map((item) => (
-            <figure className={item.wide ? "wide" : ""} key={item.title}>
+          {portfolioItems.map((item, index) => (
+            <figure className={item.wide ? "wide" : ""} key={`${item.title}-${index}`}>
               <div>
                 <Image
                   src={item.src}
@@ -351,17 +379,38 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="partners section" id="parceiros">
+        <div className="section-heading pale">
+          <div>
+            <p className="section-kicker">Entidades com quem trabalhamos</p>
+            <h2>Parcerias que constroem<br />resultados.</h2>
+          </div>
+          <p>Cooperação com instituições públicas, empresas e municípios na execução de infraestruturas.</p>
+        </div>
+        <div className="partner-grid">
+          {partnerItems.map((partner, index) => (
+            <article key={`${partner.name}-${index}`}>
+              <div className="partner-logo">
+                {partner.logo ? <img src={partner.logo} alt={`Logótipo ${partner.name}`} /> : <b>{partner.name === "Municípios" ? "MZ" : partner.name.split(/[ ,]/)[0]}</b>}
+              </div>
+              <h3>{partner.name}</h3>
+              <p>{partner.category}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="corporate-mail section" id="email">
         <div>
           <p className="section-kicker light">Comunicação corporativa</p>
           <h2>E-mail profissional<br />KHUUMBA.</h2>
-          <p className="corporate-mail-lead">A empresa está a configurar cinco contas oficiais com o domínio <strong>@khuumba.co.mz</strong>, geridas com segurança através do Zoho Mail.</p>
-          <a className="button mail-button" href="https://mail.zoho.com/zm/" target="_blank" rel="noreferrer">Aceder ao Webmail <span>↗</span></a>
+          <p className="corporate-mail-lead">Comunicação oficial através de endereços com o domínio <strong>@khuumba.co.mz</strong>, com acesso reservado e protegido.</p>
+          <a className="button mail-button" href="https://mail.zoho.com/zm/" target="_blank" rel="noopener noreferrer">Aceder ao e-mail corporativo <span>↗</span></a>
         </div>
         <div className="corporate-mail-cards">
           <article><b>01</b><h3>Identidade profissional</h3><p>Comunicação oficial com o domínio da empresa.</p></article>
-          <article><b>02</b><h3>Acesso seguro</h3><p>Autenticação e gestão directamente no Zoho Mail.</p></article>
-          <article><b>03</b><h3>Cinco contas</h3><p>Os endereços reais serão publicados após confirmação.</p></article>
+          <article><b>02</b><h3>Acesso reservado</h3><p>Cada colaborador entra com as suas credenciais pessoais.</p></article>
+          <article><b>03</b><h3>Disponível em qualquer lugar</h3><p>Acesso ao correio corporativo no computador ou telemóvel.</p></article>
         </div>
       </section>
 
