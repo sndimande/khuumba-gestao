@@ -84,7 +84,7 @@ const partners: Partner[] = [
   { name: "REVIMO, S.A.", logo: "/images/partners/revimo.png", category: "Rede Viária de Moçambique" },
   { name: "FIPAAS, FP", logo: "/images/partners/fipaas.png", category: "Água e saneamento" },
   { name: "ANE, IP", logo: "/images/partners/ane.png", category: "Administração Nacional de Estradas" },
-  { name: "Municípios de Moçambique", logo: "/images/partners/municipios.png", category: "Infraestruturas municipais" },
+  { name: "Municípios de Moçambique", logo: "/images/partners/municipios.svg", category: "Infraestruturas municipais" },
 ];
 
 const meaning = [
