@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">Municípios de Moçambique</title>
+  <desc id="desc">Símbolo representativo das autarquias e infraestruturas municipais</desc>
+  <rect width="900" height="360" rx="28" fill="#ffffff"/>
+  <g transform="translate(60 52)">
+    <path d="M132 8 246 66v84c0 78-48 132-114 158C66 282 18 228 18 150V66L132 8Z" fill="#123047"/>
+    <path d="m132 36 86 44v69c0 58-34 101-86 126-52-25-86-68-86-126V80l86-44Z" fill="#159a9c"/>
+    <path d="M78 123h108v104H78z" fill="#fff"/>
+    <path d="M66 125 132 78l66 47" fill="none" stroke="#f28c28" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M100 154h24v24h-24zm40 0h24v24h-24zm-40 38h24v24h-24zm40 0h24v24h-24z" fill="#123047"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#123047">
+    <text x="330" y="145" font-size="62" font-weight="800">MUNICÍPIOS</text>
+    <text x="332" y="205" font-size="34" font-weight="700" fill="#159a9c">DE MOÇAMBIQUE</text>
+    <path d="M332 232h470" stroke="#f28c28" stroke-width="8"/>
+    <text x="332" y="282" font-size="25" fill="#526771">Infraestruturas • Serviços • Comunidades</text>
+  </g>
+</svg>
