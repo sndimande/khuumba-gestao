@@ -400,7 +400,7 @@ export default function Home() {
           <p className="section-kicker light">Comunicação corporativa</p>
           <h2>E-mail profissional<br />KHUUMBA.</h2>
           <p className="corporate-mail-lead">Comunicação oficial através de endereços com o domínio <strong>@khuumba.co.mz</strong>, com acesso reservado e protegido.</p>
-          <a className="button mail-button" href="https://mail.zoho.com/zm/" target="_blank" rel="noopener noreferrer">Aceder ao e-mail corporativo <span>↗</span></a>
+          <a className="button mail-button" href="https://accounts.zoho.com/signin?servicename=VirtualOffice&amp;serviceurl=https%3A%2F%2Fmail.zoho.com%2Fzm%2F" target="_blank" rel="noopener noreferrer">Entrar no Webmail KHUUMBA <span>↗</span></a>
         </div>
         <div className="corporate-mail-cards">
           <article><b>01</b><h3>Identidade profissional</h3><p>Comunicação oficial com o domínio da empresa.</p></article>
