@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type PortfolioItem = { src: string; title: string; meta: string; wide?: boolean };
-type Partner = { name: string; logo?: string; category: string };
+type Partner = { name: string; logo: string; category: string };
 
 const services = [
   {
@@ -81,10 +81,10 @@ const gallery = [
 ];
 
 const partners: Partner[] = [
-  { name: "REVIMO, S.A.", category: "Rede Viária de Moçambique" },
-  { name: "FIPAAS, FP", category: "Água e saneamento" },
-  { name: "ANE", category: "Administração Nacional de Estradas" },
-  { name: "Municípios", category: "Infraestruturas municipais" },
+  { name: "REVIMO, S.A.", logo: "/images/partners/revimo.png", category: "Rede Viária de Moçambique" },
+  { name: "FIPAAS, FP", logo: "/images/partners/fipaas.png", category: "Água e saneamento" },
+  { name: "ANE, IP", logo: "/images/partners/ane.png", category: "Administração Nacional de Estradas" },
+  { name: "Municípios de Moçambique", logo: "/images/partners/municipios.png", category: "Infraestruturas municipais" },
 ];
 
 const meaning = [
@@ -117,21 +117,14 @@ function Logo({ light = false }: { light?: boolean }) {
 }
 
 export default function Home() {
+  const [paused, setPaused] = useState(false);
   const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>(gallery);
-  const [partnerItems, setPartnerItems] = useState<Partner[]>(partners);
-
   useEffect(() => {
     try {
-      const savedPortfolio = JSON.parse(localStorage.getItem("khuumba-portfolio-v1") || "null");
-      const savedPartners = JSON.parse(localStorage.getItem("khuumba-partners-v1") || "null");
-      if (Array.isArray(savedPortfolio) && savedPortfolio.length) setPortfolioItems(savedPortfolio);
-      if (Array.isArray(savedPartners) && savedPartners.length) setPartnerItems(savedPartners);
-    } catch {
-      setPortfolioItems(gallery);
-      setPartnerItems(partners);
-    }
+      const saved = JSON.parse(localStorage.getItem("khuumba-portfolio-v1") || "null");
+      if (Array.isArray(saved) && saved.length) setPortfolioItems(saved);
+    } catch {}
   }, []);
-
   return (
     <main id="inicio">
       <header className="site-header">
@@ -358,9 +351,16 @@ export default function Home() {
             saneamento, estruturas e obras públicas.
           </p>
         </div>
-        <div className="gallery-grid">
-          {portfolioItems.map((item, index) => (
-            <figure className={item.wide ? "wide" : ""} key={`${item.title}-${index}`}>
+        <div className="portfolio-controls">
+          <span>{portfolioItems.length} projectos e áreas de intervenção</span>
+          <button type="button" onClick={() => setPaused((value) => !value)} aria-pressed={paused}>
+            {paused ? "Continuar apresentação ▶" : "Pausar apresentação Ⅱ"}
+          </button>
+        </div>
+        <div className="gallery-carousel" aria-label="Galeria de projectos KHUUMBA">
+          <div className={"gallery-track" + (paused ? " paused" : "")}>
+          {[...portfolioItems, ...portfolioItems].map((item, index) => (
+            <figure className={item.wide ? "wide" : ""} key={item.title + "-" + index}>
               <div>
                 <Image
                   src={item.src}
@@ -376,25 +376,20 @@ export default function Home() {
               </figcaption>
             </figure>
           ))}
+          </div>
         </div>
       </section>
 
       <section className="partners section" id="parceiros">
         <div className="section-heading pale">
-          <div>
-            <p className="section-kicker">Entidades com quem trabalhamos</p>
-            <h2>Parcerias que constroem<br />resultados.</h2>
-          </div>
+          <div><p className="section-kicker">Entidades com quem trabalhamos</p><h2>Parcerias que constroem<br />resultados.</h2></div>
           <p>Cooperação com instituições públicas, empresas e municípios na execução de infraestruturas.</p>
         </div>
         <div className="partner-grid">
-          {partnerItems.map((partner, index) => (
-            <article key={`${partner.name}-${index}`}>
-              <div className="partner-logo">
-                {partner.logo ? <img src={partner.logo} alt={`Logótipo ${partner.name}`} /> : <b>{partner.name === "Municípios" ? "MZ" : partner.name.split(/[ ,]/)[0]}</b>}
-              </div>
-              <h3>{partner.name}</h3>
-              <p>{partner.category}</p>
+          {partners.map((partner) => (
+            <article key={partner.name}>
+              <div className="partner-logo"><img src={partner.logo} alt={"Logótipo " + partner.name} /></div>
+              <h3>{partner.name}</h3><p>{partner.category}</p>
             </article>
           ))}
         </div>
@@ -410,7 +405,7 @@ export default function Home() {
         <div className="corporate-mail-cards">
           <article><b>01</b><h3>Identidade profissional</h3><p>Comunicação oficial com o domínio da empresa.</p></article>
           <article><b>02</b><h3>Acesso reservado</h3><p>Cada colaborador entra com as suas credenciais pessoais.</p></article>
-          <article><b>03</b><h3>Disponível em qualquer lugar</h3><p>Acesso ao correio corporativo no computador ou telemóvel.</p></article>
+          <article><b>03</b><h3>Acesso em qualquer lugar</h3><p>Correio corporativo disponível no computador ou telemóvel.</p></article>
         </div>
       </section>
 
