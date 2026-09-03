@@ -538,7 +538,7 @@
   font-weight: 900;
 }
 
-.corporate-mail{background:var(--navy);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.corporate-mail h2{color:#fff}.corporate-mail-lead{max-width:600px;color:#bed0d7;font-size:16px;line-height:1.75;margin:26px 0}.mail-button{width:max-content;background:var(--orange);color:var(--navy)}.mail-button span{color:var(--navy)}.corporate-mail-cards{display:grid;gap:12px}.corporate-mail-cards article{background:#fff;color:var(--navy);padding:24px;display:grid;grid-template-columns:48px 1fr;column-gap:18px;align-items:start;border-left:5px solid var(--teal)}.corporate-mail-cards b{grid-row:1/3;width:42px;height:42px;background:var(--orange);display:grid;place-items:center}.corporate-mail-cards h3{margin:2px 0 7px;font-size:18px}.corporate-mail-cards p{margin:0;color:#687b84;font-size:12px;line-height:1.55}
+.corporate-mail{background:var(--navy);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.corporate-mail h2{color:#fff}.corporate-mail-lead{max-width:600px;color:#bed0d7;font-size:16px;line-height:1.75;margin:26px 0}.mail-access-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.mail-button{width:max-content;background:var(--orange);color:var(--navy)}.mail-button span{color:var(--navy)}.mail-switch-account{color:#fff;border-bottom:1px solid #63d7d8;padding:10px 2px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}.mail-switch-account:hover{color:#63d7d8}.corporate-mail-cards{display:grid;gap:12px}.corporate-mail-cards article{background:#fff;color:var(--navy);padding:24px;display:grid;grid-template-columns:48px 1fr;column-gap:18px;align-items:start;border-left:5px solid var(--teal)}.corporate-mail-cards b{grid-row:1/3;width:42px;height:42px;background:var(--orange);display:grid;place-items:center}.corporate-mail-cards h3{margin:2px 0 7px;font-size:18px}.corporate-mail-cards p{margin:0;color:#687b84;font-size:12px;line-height:1.55}
 .gloginlogo img{width:265px;height:auto;object-fit:contain}.gloginlogo:after{left:auto;right:28px}.glogo{background:#fff;border-radius:6px;padding:7px 9px}.glogo img{width:100%;height:auto;object-fit:contain;display:block}
 @media(max-width:900px){.corporate-mail{grid-template-columns:1fr}.glogo{max-width:210px;margin-inline:auto!important}}
 @media (max-width: 850px) {
@@ -1998,13 +1998,3 @@ footer {
     padding: 35px 25px;
   }
   .gloginlogo {
-    margin-bottom: 40px;
-  }
-  .gcards,
-  .gsummary {
-    grid-template-columns: 1fr;
-  }
-  .gactions button {
-    display: none;
-  }
-}
